@@ -1,0 +1,45 @@
+
+
+
+################## Exercise 1 #################
+Exercise 1.i:
+
+My value of i for the "while" loop is 1:
+My value of i for the "for" loop is 1:
+My value of i for the "do-while" loop is 2:
+The value of INT_MAX in limits.h is 2147483647:
+
+
+Exercise 1.ii
+
+My value of i for the "while" loop is 1:
+My value of i for the "for" loop is 1:
+My value of i for the "do-while" loop is 0:
+The value of INT_MAX in limits.h is -2147483648:
+
+
+Exercise 1.iii
+
+0.000000
+0.000000 
+0.000000 
+0.000000 
+
+
+
+################## Exercise 2 #################
+max=715827882 
+The sum_up_float becomes: 15.403683 
+The sum_down_float becomes: 18.807919 
+The sum_up_double is: 20.966166 
+The sum_down_double is: 20.966166 
+
+
+
+################## Exercise 3 #################
+The return value of the function is: 0
+
+
+
+################## Exercise 4 #################
+Not a digit 

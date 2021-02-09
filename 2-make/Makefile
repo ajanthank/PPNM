@@ -8,11 +8,11 @@ default: out.txt
 out.txt: hello
 	./hello > out.txt
 
-hello: hello.o
-	$(CC) -o hello hello.o
+hello: hello.c
+	$(CC) hello.c -o hello 
 
-hello.o: hello.c
-	$(CC) -c hello.c
+#hello.o: hello.c
+#	$(CC) -c hello.c
 
 clean:
 	$(RM) out.txt hello.o hello
