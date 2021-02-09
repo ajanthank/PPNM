@@ -4,7 +4,7 @@
 ################## Exercise 1 #################
 Exercise 1.i:
 
-My value of i for the "while" loop is 1:
+My value of i for the "while" loop is 1612797156:
 My value of i for the "for" loop is 1:
 My value of i for the "do-while" loop is 2:
 The value of INT_MAX in limits.h is 2147483647:
@@ -42,4 +42,22 @@ The return value of the function is: 0
 
 
 ################## Exercise 4 #################
-Not a digit 
+Not a digit. 
+############################################################################# 
+Here begins the Math-exercises.
+############################################################################# 
+This is exercise 1:
+This is gamma of 5: 24.000000 
+This is J1 of 3: 0.339059 
+This is sqrt(-2):                  Re( nan),  Im( 0.000000) 
+This is exp(i*pi):                 Re( 1.000000),  Im( 0.000000) 
+This is exp(i):                    Re( 1.000000),  Im( 0.000000) 
+This is i to the power of e:       Re( 0.000000),  Im( 2.718282) 
+0.000000
+ 1.000000 
+2.718282
+3.141593
+This is exercise 2: 
+Float:              0.1111111119389533996582031f 
+Double:             0.1111111111111111049432054 
+Long Double:        0.1111111111111111111096053 

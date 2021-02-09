@@ -62,14 +62,14 @@ int E2(){
   int i=1;
   float sum_up_float, sum_down_float=0.0;
   while(i<max){
-    sum_up_float = 1.0/i+sum_up_float;
+    sum_up_float = 1.f/i+sum_up_float;
     i++;
   }
   
   printf("The sum_up_float becomes: %f \n",sum_up_float);
 
   while(i>0){
-    sum_down_float = sum_down_float+1.0/i;
+    sum_down_float = sum_down_float+1.f/i;
     i--;
   }
   printf("The sum_down_float becomes: %f \n", sum_down_float);
@@ -80,11 +80,11 @@ int E2(){
   i=1;
 
   while(i<max){
-    sum_up_double=sum_up_double+1.0/i;
+    sum_up_double=sum_up_double+1.f/i;
     i++;
   }
   while(i>0){
-    sum_down_double=sum_down_double+1.0/i;
+    sum_down_double=sum_down_double+1.f/i;
     i--;
   }
   printf("The sum_up_double is: %f \nThe sum_down_double is: %f \n",sum_up_double, sum_down_double);
@@ -95,6 +95,8 @@ int equal(double a, double b, double epsilon, double tau);
 
 void name_digit(int i);
 
+int math_exercise();
+
 int main(){
   printf("\n\n\n################## Exercise 1 #################\n");
   E1();
@@ -104,5 +106,6 @@ int main(){
   printf("The return value of the function is: %i\n", equal(2.3,2.5,0,0));
   printf("\n\n\n################## Exercise 4 #################\n");
   name_digit(12);
+  math_exercise();
   return 0;
 }

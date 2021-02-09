@@ -5,12 +5,12 @@ cat: out.txt
 	echo -n 'The results of the program is:'
 	cat out.txt
 
-out.txt: epsilon
-	echo -n 'The run time of the program is:\n'
-	time ./epsilon>out.txt
+out.txt: combined
+	echo 'The run time of the project is:'
+	time ./combined > out.txt
 
-epsilon: epsilon.c epsilon2.c
-	$(CC) epsilon.c epsilon2.c -o epsilon
+combined: epsilon.c epsilon2.c exercise-math.c
+	$(CC) epsilon.c epsilon2.c exercise-math.c -o combined
 
 clean:
-	$(RM) epsilon out.txt
+	$(RM) combined out.txt
