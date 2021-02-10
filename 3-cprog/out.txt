@@ -4,7 +4,7 @@
 ################## Exercise 1 #################
 Exercise 1.i:
 
-My value of i for the "while" loop is 1406403501:
+My value of i for the "while" loop is 1:
 My value of i for the "for" loop is 1:
 My value of i for the "do-while" loop is 2:
 The value of INT_MAX in limits.h is 2147483647:
