@@ -120,7 +120,7 @@ int E1(){
 }
 
 int E2(){
-  int max = INT_MAX/3;
+  int max = INT_MAX/3e4;
   printf("max=%i \n", max);
   int i=1;
   float sum_up_float, sum_down_float=0.0;
@@ -151,6 +151,62 @@ int E2(){
     i--;
   }
   printf("The sum_up_double is: %f \nThe sum_down_double is: %f \n",sum_up_double, sum_down_double);
+
+  sum_up_float=0;
+  sum_down_float=0;
+  
+
+  for (i=1;i<max;i++){
+    sum_up_float=1.0f/i+sum_up_float;
+  }
+  for (i=max;i>0;i--){
+    sum_down_float=1.0f/i+sum_down_float;
+  }
+  printf("The sum_up_float for the for loop is: %f \nThe sum_down_float for the for loop is: %f \n",sum_up_float, sum_down_float);
+
+  sum_up_double=0;
+  sum_down_double=0;
+
+  for (i=1;i<max;i++){
+    sum_up_double=1.0f/i+sum_up_double;
+  }
+  for (i=max;i>0;i--){
+    sum_down_double=1.0f/i+sum_down_double;
+  }
+  printf("The sum_up_double for the for loop is: %f \nThe sum_down_double for the for loop is: %f \n",sum_up_double, sum_down_double);
+  i=1;
+  
+  sum_up_double=0;
+  sum_down_double=0;
+
+  do {
+    sum_up_double=sum_up_double+1.0f/i;
+    i++;
+  } while(i<max);
+
+  do {
+    sum_down_double=sum_down_double+1.0f/i;
+    i--;
+  } while(i>0);
+
+  printf("The sum_up_double for the do while loop is: %f \nThe sum_down_double for the do while loop is: %f \n",sum_up_double, sum_down_double);
+
+  sum_up_float=0;
+  sum_down_float=0;
+
+  i=1;
+
+  do {
+    sum_up_float=sum_up_float+1.0f/i;
+    i++;
+  } while(i<max);
+
+  do {
+    sum_down_float=sum_down_float+1.0f/i;
+    i--;
+  } while(i>0);
+
+  printf("The sum_up_float for the do while loop is: %f \nThe sum_down_float for the do while loop is: %f \n",sum_up_float, sum_down_float);
   return 0;
 }
 

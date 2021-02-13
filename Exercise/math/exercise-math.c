@@ -2,7 +2,7 @@
 #include <math.h>
 #include <complex.h>
 
-int math_exercise () {
+int main () {
   printf("############################################################################# \n");
   printf("Here begins the Math-exercises.\n");
   printf("############################################################################# \n");

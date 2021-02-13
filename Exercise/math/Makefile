@@ -6,12 +6,12 @@ cat: out.txt
 	@echo -n 'The results of the program is:'
 	@cat out.txt
 
-out.txt: combined
+out.txt: math
 	@echo 'The run time of the project is:'
-	time ./combined > out.txt
+	time ./math > out.txt
 
-combined: epsilon.c epsilon2.c exercise-math.c
-	$(CC) epsilon.c epsilon2.c exercise-math.c -o combined
+math: exercise-math.c
+	$(CC) exercise-math.c -o math
 
 clean:
-	$(RM) combined out.txt
+	$(RM) math out.txt
