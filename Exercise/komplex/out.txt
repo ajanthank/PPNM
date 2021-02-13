@@ -1,0 +1,12 @@
+a= (1,-2)
+b= (3,4)
+a+b should   =  (4,6)
+a+b actually =  (4,2)
+a*b = (11,-2)
+Complex conjugat of a= (1,2)
+Absolute value of a=5
+a/b= (-0.2,-0.4)
+exp(a)= (-1.1312,-2.47173)
+sin(a)= (3.16578,-1.9596)
+cos(a)= (2.03272,3.0519)
+sqrt(a)= (1.27202,0.786151)
