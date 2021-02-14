@@ -59,4 +59,8 @@ komplex komplex_sqrt (komplex z) {
   komplex result = {sqrt((sqrt(pow(z.re,2)+pow(z.im,2))+z.re)/2) , sqrt((sqrt(pow(z.re,2)+pow(z.im,2))-z.re)/2) };
   return result;
 }
-
+komplex komplex_pow (komplex z, double n) {
+  double r = pow(z.re,2)+pow(z.im,2);
+  komplex result = {cos(n*atan(-z.im/z.re))*pow(r,n/2) , sin(n*atan(-z.im/z.re))*pow(r,n/2) };
+  return result;
+}

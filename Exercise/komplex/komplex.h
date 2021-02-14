@@ -20,6 +20,7 @@ komplex komplex_exp      (komplex z);
 komplex komplex_sin      (komplex z);
 komplex komplex_cos      (komplex z);
 komplex komplex_sqrt     (komplex z);
+komplex komplex_pow      (komplex z, double n);
 /* end of optional */
 
 #endif

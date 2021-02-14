@@ -15,8 +15,9 @@ int main(){
   komplex e= komplex_exp(a);
   komplex sina=komplex_sin(a);
   komplex cosa=komplex_cos(a);
-  komplex sqrta=komplex_pow(a);
-  //komplex powa=komplex_pow(a);
+  komplex sqrta=komplex_sqrt(a);
+  double n=0.5;
+  komplex powa=komplex_pow(a,n);
 
   komplex_print("a=",a);
   komplex_print("b=",b);
@@ -30,6 +31,6 @@ int main(){
   komplex_print("sin(a)=",sina);
   komplex_print("cos(a)=",cosa);
   komplex_print("sqrt(a)=",sqrta);
-  //komplex_print("pow(a,1/2)=",powa);
+  komplex_print("pow(a,1/2)=",powa);
   return 0;
 }
