@@ -1,0 +1,10 @@
+CFLAGS = -Wall -Werror -O1
+CFLAGS += $(shell gsl-config --cflags)
+LDLIBS += $(shell gsl-config --libs)
+CC = gcc
+
+out.A.txt: main
+	./$< >$@
+
+.PHONEY: clean
+$(RM) main
