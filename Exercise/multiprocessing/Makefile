@@ -1,12 +1,14 @@
 CFLAGS = -Wall -O1 -std=gnu11
 CFLAGS += -pthread
-#CFLAGS += -fopenmp
-LDLIBS = -lm #-lgomp
+CFLAGS += -fopenmp
+LDLIBS = -lm -lgomp
+CC=gcc
 
 default: out.txt mcplot.png
 out.txt: main
 	time ./$< >$@
-
+main:main.c
+	$(CC) -o $@ $<
 mcplot.png: data.txt Makefile circle.txt
 	echo '\
 	set terminal png;\

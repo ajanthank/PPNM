@@ -8,21 +8,21 @@ double f (double x, void * params){
   return f;
 }
 
-double erfg (double x, void * params){
-  double z=*(double *) params;
-  double erfg = (2/sqrt(M_PI))*exp(pow(x*z,2));
+double erfg (double x, void * param){
+
+  double erfg = (2/sqrt(M_PI))*exp(-pow(x,2));
   return erfg;
 }
 double myG (double z){
-  gsl_function F;
-  F.function = &erfg;
-  F.params = &z;
-  int limit=999;
-  //  gsl_set_error_handler_off()
-  gsl_integration_workspace* w = gsl_integration_workspace_alloc (limit);
-  double a=0,acc=1e-6,eps=1e-6,result,error;
+  gsl_function G;
+  G.function = &erfg;
 
-  gsl_integration_qagiu(&F,a,acc,eps,limit,w,&result,&error);
+  int limit=999;
+
+  gsl_integration_workspace* w = gsl_integration_workspace_alloc (limit);
+  double a=0,result,error;
+
+  gsl_integration_qags(&G,a,z,0,1e-8,limit,w,&result,&error);
 
   gsl_integration_workspace_free (w);
   return result;
@@ -40,16 +40,17 @@ int main (){
   F.function=&f;
   F.params = &z;
 
-  gsl_integration_qags (&F, 0, 1, 0, 1e-8, 1000,w, &result, &error);
+  gsl_integration_qags (&F, 0, 1, 0, 1e-8, limit,w, &result, &error);
 
   printf("Result= %g\n", result);
 
   FILE * datab=fopen("DataB.txt","w");
-  for (double x= 0; x<=10;x=+1.0){
-    fprintf(datab,"%10g %10g",x,myG(x));
+  for (double x= -3; x<=3;x+=1.0/100){
+    fprintf(datab,"%10g %10g\n",x,myG(x));
   }
 
-
   gsl_integration_workspace_free (w);
+  fclose(datab);
+
   return 0;
 }
