@@ -33,7 +33,7 @@ int hh(){
   printf("Right hand side x is x=\n");
 
   gsl_vector_fprintf(stdout, x, "%g");
-  printf("Chack: A*x=\n");
+  printf("Check: A*x=\n");
   gsl_vector_fprintf(stdout, y, "%g");
 
   gsl_matrix_free(A);
@@ -69,7 +69,7 @@ int hilbert(){
     gsl_vector_view evec_i = gsl_matrix_column (Acopy, i);
 
     printf("Eigenval = %g\n", x_i);
-    printf("Eigenvactor = \n");
+    printf("Eigenvector = \n");
     gsl_vector_fprintf(stdout, &evec_i.vector,"%g");
   }
 
