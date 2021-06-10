@@ -2,7 +2,7 @@
 #include <math.h>
 #include <pthread.h>
 #include <stdlib.h>
-#include <omp.h>
+//#include <omp.h>
 
 #define N 1000
 
