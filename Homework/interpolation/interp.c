@@ -28,7 +28,7 @@ double linterp_integ(int n, double x[],double y[],double z){
   double output=0;
   int j=1;
   while(j<=i){
-    output+=y[p-1]*(x[p]-x[p-1])+0.5*(y[p]-y[p-1])*(x[p]-x[p-1]);
+    output+=y[j-1]*(x[j]-x[j-1])+0.5*(y[j]-y[j-1])*(x[j]-x[j-1]);
     j++;
   }
   double yinput=linterp(n,x,y,z);

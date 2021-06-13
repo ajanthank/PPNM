@@ -7,8 +7,9 @@ double linterp(int n, double x[], double y[], double z);
 double linterp_integ(int n, double x[], double y[], double z);
 
 int main(){
-  printf("###################### Problem A ######################\n");
-  printf("--------------------- Question 1 ---------------------\n");
+
+  //printf("###################### Problem A ######################\n");
+  //printf("--------------------- Question 1 ---------------------\n");
   
   int n=20;
 
