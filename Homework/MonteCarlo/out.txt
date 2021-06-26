@@ -1,0 +1,8 @@
+------------------- Exercise A ----------------
+Pseudo-random MC:
+Result of MC: 1.36399
+Computed Error:0.0095479
+--------------------- Exercise B --------------------
+Quasi-random MC:
+Result of MC: 1.37438
+Computed Error:0.0049575

@@ -1,0 +1,169 @@
+-------------------- Exercise A -------------------
+
+Integration function:	 ∫_0^1 dx √(x) 
+Exact solution:	   0.666667 
+Numerical Solution:	   0.666797
+Error Goal:	 0.00166667
+Actual Error:	 0.000130585
+Computational Error:	 0.000307102
+Function calls:	 7
+
+
+Integration function:	 ∫_0^1 dx 4√(1-x²) 
+Exact solution:	    3.14159 
+Numerical Solution:	    3.14184
+Error Goal:	 0.00414159
+Actual Error:	 0.000251125
+Computational Error:	 0.000794763
+Function calls:	 11
+
+
+------------------- Exercise B --------------------
+
+######################################################
+
+The first integrater:
+Integration function:	 ∫_0^1 dx 1/√(x) 
+Exact solution:	          2 
+Numerical Solution:	    2.00009
+Error Goal:	      0.003
+Actual Error:	 9.36739e-05
+Computational Error:	 0.000321984
+Function calls:	 1072
+
+
+The CC-integrater:
+Integration function:	 ∫_0^1 dx 1/√(x) 
+Exact solution:	          2 
+Numerical Solution:	    1.99575
+Error Goal:	      0.003
+Actual Error:	 0.00425314
+Computational Error:	 0.000531738
+Function calls:	 1072
+
+
+######################################################
+
+The first integrater:
+Integration function:	 ∫_0^1 dx 1/√(x) 
+Exact solution:	         -4 
+Numerical Solution:	   -3.99996
+Error Goal:	      0.005
+Actual Error:	 4.29177e-05
+Computational Error:	 0.000750149
+Function calls:	 1072
+
+
+The CC-integrator:
+Integration function:	 ∫_0^1 dx 1/√(x) 
+Exact solution:	         -4 
+Numerical Solution:	   -3.99255
+Error Goal:	      0.005
+Actual Error:	 0.00745441
+Computational Error:	 0.000514863
+Function calls:	 1072
+
+
+######################################################
+
+The first integrator:
+Integration function:	 ∫_0^1 dx 4√(1-x²) 
+Exact solution:	    3.14159 
+Numerical Solution:	    3.14184
+Error Goal:	 0.00414159
+Actual Error:	 0.000251125
+Computational Error:	 0.000794763
+Function calls:	 1072
+
+
+The CC-integrator:
+Integration function:	 ∫_0^1 dx 4√(1-x²) 
+Exact solution:	    3.14159 
+Numerical Solution:	    3.14016
+Error Goal:	 0.00414159
+Actual Error:	 0.00143272
+Computational Error:	 0.00058871
+Function calls:	 1072
+
+
+GSL CC integrator:
+Integration function:	 ∫_0^1 dx 4√(1-x²) 
+Exact solution:	    3.14159 
+Numerical Solution:	    3.14159
+Error Goal:	 0.00414159
+Actual Error:	 3.17909e-07
+Computational Error:	 0.00182531
+Function calls:	 135
+
+
+----------------------- Exercise C ------------------------
+Both limits are infinity:
+######################################################
+
+CC integrator:
+Integration function:	 ∫_(-∞)^(∞) dx exp(-x*x) 
+Exact solution:	    1.77245 
+Numerical Solution:	    1.77141
+Error Goal:	 0.00277245
+Actual Error:	 0.00104095
+Computational Error:	 0.000592418
+Function calls:	 1072
+
+
+Gsl integrator:
+Integration function:	 ∫_(-∞)^(∞) dx exp(-x*x) 
+Exact solution:	    1.77245 
+Numerical Solution:	    1.77245
+Error Goal:	 0.00277245
+Actual Error:	 1.22147e-12
+Computational Error:	 4.31636e-06
+Function calls:	 0
+
+
+Number of calls is not available.
+First limit is infinity:
+######################################################
+
+CC integrator:
+Integration function:	 ∫_(-∞)^0 dx exp(-x*x) 
+Exact solution:	   0.886227 
+Numerical Solution:	   0.886425
+Error Goal:	 0.00188623
+Actual Error:	 0.000198372
+Computational Error:	 0.000589281
+Function calls:	 1072
+
+
+Gsl integratorIntegration function:	 ∫_(-∞)^0 dx exp(-x*x) 
+Exact solution:	   0.886227 
+Numerical Solution:	   0.886227
+Error Goal:	 0.00188623
+Actual Error:	 6.10734e-13
+Computational Error:	 2.15818e-06
+Function calls:	 0
+
+
+Number of calls is not available.
+Second limit is infinity:
+######################################################
+
+CC integrator:
+Integration function:	 ∫_0^(∞) dx exp(-x*x) 
+Exact solution:	   0.886227 
+Numerical Solution:	   0.886425
+Error Goal:	 0.00188623
+Actual Error:	 0.000198372
+Computational Error:	 0.000589281
+Function calls:	 1072
+
+
+Gsl integratorIntegration function:	 ∫_0^(∞) dx exp(-x*x) 
+Exact solution:	   0.886227 
+Numerical Solution:	   0.886227
+Error Goal:	 0.00188623
+Actual Error:	 6.10734e-13
+Computational Error:	 2.15818e-06
+Function calls:	 0
+
+
+Number of calls is not available.

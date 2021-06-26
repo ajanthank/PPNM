@@ -1,0 +1,6 @@
+qnewton: |DX|<DELTA*|x|
+qnewton: nsteps=2 nscale=1 nresets=0 fx=9.9e-01
+qnewton: |DX|<DELTA*|x|
+qnewton: nsteps=5 nscale=2 nresets=2 fx=8.0e+00
+qnewton: |DX|<DELTA*|x|
+qnewton: nsteps=1 nscale=0 nresets=0 fx=0.0e+00

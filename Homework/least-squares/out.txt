@@ -1,0 +1,2 @@
+The half-life of ThX is found to be, 4.04452 +/- 0.120375 days
+The modern value is 3.63 days[Wikipedia], which seems to disagree with the values from the fit. This could be due to the contamination of other isotopes of radium.

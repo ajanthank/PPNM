@@ -1,0 +1,135 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <assert.h>
+
+#define RND ((double) rand()/RAND_MAX)
+
+double corput(int n, int base){
+  double q=0, bk=(double) 1./base;
+  while (n>0){
+    q+=(n%base)*bk;
+    n/=base;
+    bk/=base;
+  }
+  return q;
+}
+
+void halton(int n, int d, double x[], double xerr[]){
+  int base1[]={2,3,5,7,11,13,17,19,23,29,31,37,41,43,47};
+  int base2[]={5,7,11,13,17,19,23,29,31,37,41,43,47,53,59};
+  int maxd=sizeof(base1)/sizeof(int);
+  assert(d<=maxd);
+  for(int i=0;i<d;i++){
+    x[i]=corput(n,base1[i]);
+    xerr[i]=corput(n,base2[i]);
+  }
+}
+
+void qMCint(int d, int N, double a[]. double b[], double fun(int d, double x[]), double* val, double* err){
+  double mean_f=0, mean_ff=0, V=1, x[d], xerr[d];
+  for(int i=0;i<d;i++){
+    V*=b[i]-a[i];
+  }
+  for(int i=0; i<N;i++){
+    halton(i,d,x,xerr);
+    for(int j=0;j<d;j++){
+      x[j]=a[j]+x[j]*(b[j]-a[j]);
+      xerr[j]=a[j]+xerr[j]*(b[j]-a[j]);
+    }
+    double fx=fun(d,x), fxerr=fun(d,xerr);
+    if(isinf(fxerr)==0 && isinf(fx)==0){
+      mean_f+=fx;
+      mean_ff+=fxerr;
+    }
+  }
+  mean_f*=1./N.;
+  mean_ff*=1./N.;
+  *err=fabs(mean_f-mean_ff)*V;
+  *val=mean_f*V;
+}
+
+ranMCint(int d, int N, double a[],double b[], double fun(int d, double x[]), double* val, double* err){
+  double mean_f=0, mean_ff=0, V=1, x[d];
+  for(int i=0; i<d;i++){
+    V*=b[i]-a[i];
+  }
+  for(int i=0; i<d; i++){
+    for(int j=0;j<d;j++){
+      x[j]=a[j]+RND*(b[j]-a[j]);
+    }
+  }
+  mean_f+=fun(d,x);
+  mean_ff+=pow(fun(d,x),2);
+  *err=sqrt(mean_ff-pow(mean_f,2))*V/sqrt(N);
+  *val=mean_f*V;
+}
+
+double sigma1(int d, double x[]){
+  double sigma=1.;
+  double val=1./(sigma*sqrt(2.*M_PI))*exp(-0.5*pow(x[0]/sigma,2));
+  if(x[0]<1 && x[0]>-1){
+    return val;
+  }
+  else{
+    return 0;
+  }
+}
+
+double sigma2(int d, double x[]){
+  double sigma=1.;
+  double val=1./(sigma*sqrt(2.*M_PI))*exp(-0.5*pow(x[0]/sigma,2));
+  if(x[0]<2 && x[0]>-2){
+    return val;
+  }
+  else{
+    return 0;
+  }
+}
+
+double gamma(int d, double x[]){
+  for(int i=0;i<d;i++){
+    if(x[i]>M_PI || x[i]<0){
+      return 0;
+    }
+  }
+  double val=1./((pow(M_PI,3))*(1-cos(x[0])*cos(x[1])*cos(x[2])));
+  return val;
+}
+
+double dim(int d, double x[]){
+  if(x[0]*x[0]+x[1]*x[1]<1.){
+    double val=1.;
+    return val;
+  }
+  else{
+    return 0;
+  }
+}
+
+int main(){
+  double a[]={-10}, b[]={10};
+  double a_gam[]={0,0,0}, b_gam[]={M_PI,M_PI,M_PI};
+  double a_d[]={-1.,-1.}, b_d[]={1.,1.};
+  double sigma_1, sigma_2, err_sigma1, err_sigma2;
+  double val, valq, err, errq;
+  int d=1, N=1e3, m=2;
+
+  for(int i=0;i<50;i++){
+    int Ngam=N+N*i;
+    ranMCint(m,Ngam,a_d,d_d,dim,&val,&err);
+    qMCint(m,ngam,a_d,b_d,dim,&valq,&errq);
+    printf("%10d %10g %10g %10g %10g %10g\n",Ngam,val,valq,err,errq,M_PI);
+  }
+
+  printf("\n\n\n");
+
+  ranMCint(d,N,a,b,sigma1,&sigma_1,&err_sigma1);
+  qMCint(d,N,a,b,sigma2, &sigma_2, &err_sigma2);
+  
+  printf("int of normal dist 1 sigma = %g error = %g N = %i\n",sigma_1, err_sigma1, N);
+  printf("int of normal dist 2 sigma [quasi]= %g error = %g N = %i\n",sigma_2, err_sigma2, N);
+  printf("Val of ex b) integral (exact val = 1.3932): \n");
+
+  return 0;
+}

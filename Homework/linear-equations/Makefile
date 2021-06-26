@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS= -std=gnu11 -O1 -Wall #-I/usr/local/include
+CFLAGS= -std=gnu11 -O1 -Wall
 CFLAGS += $(shell gsl-config --cflags)
 LDLIBS += $(shell gsl-config --libs)
 
