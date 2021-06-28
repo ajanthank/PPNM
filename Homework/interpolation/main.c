@@ -29,7 +29,7 @@ int main(){
     dy[i]=-sin(x[i]);
     fprintf(xydata,"%10g %10g\n", x[i], y[i]);
   }
-  double dx= 1.0/(32*1e4);
+  double dx= 1.0/(320);
   FILE* lindata=fopen("LinData.txt","w");
   for (double i=x_min; i<=x_max;i+=dx){
     fprintf(lindata,"%10g %10g\n",i,linterp(n,x,y,i));
@@ -45,15 +45,6 @@ int main(){
 
   printf("###################### Problem B ######################\n");
   printf("#The quadspline:\n");
-
-  /*  fprintf(xydata,"\n\n\n");
-  double t[n], f[n];
-  for (int i=0;i<n;i++){
-    t[i]= i/2.;
-    f[i]=cos(t[i]);
-    fprintf(xydata,"%10g %10g\n", t[i], f[i]);
-  }
-  */
 
   qinterp* s=qinterp_alloc(n,x,y);
 
