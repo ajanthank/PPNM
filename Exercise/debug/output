@@ -1,2 +1,3 @@
 half m_{00} (should be 33):
-status=0 : everything went just fine (status=0)
+half m_{00} = 33
+status=17 : everything went just fine (status>=0)

@@ -92,15 +92,10 @@ int driver(void f(double t, gsl_vector* y, gsl_vector* dydt),
       k++;
       if(k>=steps){
 	return -k;
-	//	printf("Here %d\n",k);
 	Yal=realloc(*Yal, sizeof(double)*(n*(k+1)));
 	Xal=realloc(*Xal, sizeof(double)*(k+1));
 	Y=gsl_matrix_view_array(*Yal, k+1,n);
-	//	printf("Here %d\n",k);
-
 	X=gsl_vector_view_array(*Xal,k+1);
-	//	printf("Here %d",k);
-	//	printf("%g",gsl_vector_get(&X.vector,0));
       }
       xpos+=h;
       gsl_vector_set(&X.vector,k,xpos);

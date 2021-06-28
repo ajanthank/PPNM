@@ -60,13 +60,18 @@ void printm(gsl_matrix* M, char* name){
   for(int i=0;i<M->size1; i++){
     for(int j=0;j<M->size2;j++){
       m_ij=gsl_matrix_get(M,i,j);
+      if(m_ij<1e-10){
+	m_ij=0.0;
+      }
       printf("%10g,  ",m_ij);
+    }
+    if(i==(M->size1)-1){
+      printf("]\n");
     }
     if(i<M->size1){
       printf("\n");
     }
   }
-  printf("]\n");
 }
 
 void printv(gsl_vector* v, char* name){
